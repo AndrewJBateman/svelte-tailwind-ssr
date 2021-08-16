@@ -2,13 +2,14 @@ import { writable } from 'svelte/store';
 
 export const countries = writable([]);
 
-const fetchCountry = async () => {
+export const fetchCountries = async () => {
 	const url = 'https://restcountries.eu/rest/v2/all';
 	const res = await fetch(url);
 	const data = await res.json();
-	const loadedData = data.map((data) => {
-    return data;
-  });
+	const loadedData = data.map((data) => ({
+		name: data.name,
+		image: data.flag,
+		capital: data.capital
+	}));
 	countries.set(loadedData);
 };
-fetchCountry();
