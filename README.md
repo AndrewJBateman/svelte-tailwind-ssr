@@ -1,6 +1,7 @@
 # :zap: Svelte Tailwind SSR
 
-* Sveltejs kit used to display API data
+* Sveltejs kit used to display country API data
+* Code from [James Q Quick](https://www.youtube.com/channel/UC-T8W79DN6PBnzomelvqJYw) - see [:clap: Inspiration](#clap-inspiration) below - but using a different API, styling, navigation and grid layout. I recommend his tutorials - they are well explained.
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/svelte-tailwind-ssr?style=plastic)
@@ -24,15 +25,19 @@
 
 ## :books: General info
 
-* tba
+* Displays grid of Tailwind-styled cards, one for each country
+* Search bar shows all countries that match the user search text
+* Unused Tailwind CSS is purged during build which makes for a much lighter bundle
 
 ## :camera: Screenshots
 
-![Frontend screenshot](./imgs/api.png)
+![Frontend screenshot](./imgs/search.png)
 
 ## :signal_strength: Technologies
 
 * [Sveltejs/kit v3](https://svelte.dev/) fast front-end UI library with small bundles of highly-optimized vanilla JavaScript & declarative transitions. Does not use a virtual DOM.
+* [Tailwind v2](https://tailwindcss.com/) CSS framework
+* [REST Countries API v2](https://restcountries.eu/) RESTful API with data on all world countries
 
 ## :floppy_disk: Setup
 
@@ -55,12 +60,13 @@
 
 ## :cool: Features
 
-* compact build folder
+* Search input filtering
+* Tailwind results in a very compact bundle and helps with Lighthouse audit
 
 ## :clipboard: Status & To-Do List
 
-* Status: In work
-* To-Do: complete
+* Status: Working
+* To-Do: Add navigation to country detail page
 
 ## :clap: Inspiration
 
