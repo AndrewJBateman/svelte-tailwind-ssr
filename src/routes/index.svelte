@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import { countries } from '../stores/datastore';
+  console.log($countries[0]);
+</script>
+
+<svelte:head>
+	<title>Svelte Kit API Data</title>
+</svelte:head>
+<h1>Svelte Kit API Data</h1>
+
+{#each $countries as country}
+<p>{country.name}</p>
+{/each}
