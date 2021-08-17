@@ -28,6 +28,7 @@
 * Displays grid of Tailwind-styled cards, one for each country
 * Search bar shows all countries that match the user search text
 * Unused Tailwind CSS is purged during build which makes for a much lighter bundle
+* [REST API Endpoints](https://restcountries.eu/#api-endpoints-code)
 
 ## :camera: Screenshots
 
@@ -66,11 +67,12 @@
 ## :clipboard: Status & To-Do List
 
 * Status: Working
-* To-Do: Add navigation to country detail page
+* To-Do: Add navigation from country detail page back to home. Add SSR etc.
 
 ## :clap: Inspiration
 
-* tba
+* [
+James Q Quick: SvelteKit Crash Course - SSR, API Routes, Stores, Tailwind CSS, and More!](https://www.youtube.com/watch?v=UU7MgYIbtAk&t=63s)
 
 ## :file_folder: License
 
