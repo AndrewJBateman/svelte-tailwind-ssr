@@ -20,7 +20,6 @@
 <svelte:head>
 	<title>Svelte Kit API Data</title>
 </svelte:head>
-<!-- <h1 classs="text-4xl text-center my-8 uppercase">Svelte Kit API Data</h1> -->
 
 <input
 	class="w-full rounded-md text-lg p-2 border-2 border-gray-200"
