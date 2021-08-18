@@ -26,24 +26,31 @@
 ## :books: General info
 
 * Displays grid of Tailwind-styled cards, one for each country
+* Tailwind card data shown using separate card components
 * Search bar shows all countries that match the user search text
+* Country detail page uses the country alpha3 code in lower case as the unique id passed by route params
+* API endpoint: `http://localhost:3000/api/countries/` shows all countries
+* API endpoint: `http://localhost:3000/api/countries/id` shows country with matching id
 * Unused Tailwind CSS is purged during build which makes for a much lighter bundle
 * [REST API Endpoints](https://restcountries.eu/#api-endpoints-code)
 
 ## :camera: Screenshots
 
 ![Frontend screenshot](./imgs/search.png)
+![Frontend screenshot](./imgs/api.png)
 
 ## :signal_strength: Technologies
 
 * [Sveltejs/kit v3](https://svelte.dev/) fast front-end UI library with small bundles of highly-optimized vanilla JavaScript & declarative transitions. Does not use a virtual DOM.
 * [Tailwind v2](https://tailwindcss.com/) CSS framework
+* [Tailwind Colour Pallete](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
+* [Online color converter, hex to Tailwind](https://tailwind-color-finder.vercel.app/)
 * [REST Countries API v2](https://restcountries.eu/) RESTful API with data on all world countries
 
 ## :floppy_disk: Setup
 
 * `npm i` to install dependencies
-* `npm run dev` to run dev server
+* `npm run dev` to run dev server on port `localhost:3000`
 * `npm run build` to build optimised version
 * `npm run start` to run the newly built app
 
@@ -53,10 +60,37 @@
 
 ## :computer: Code Examples
 
-* tba
+* `stores/datastore.js` functions to fetch JSON data from a REST API
 
-```svelte
+```javascript
+// Fetch JSON data - 3 fields only - for all countries from a REST API
+export const fetchCountries = async () => {
+	const url = 'https://restcountries.eu/rest/v2/all?fields=name;flag;alpha3Code';
+	const res = await fetch(url);
+	const data = await res.json();
+	const loadedData = data.map((data) => ({
+		name: data.name,
+		id: data.alpha3Code.toLowerCase(),
+		image: data.flag
+	}));
+	countries.set(loadedData);
+};
 
+// Fetch JSON data on country with alpha3 code matching id from a REST API
+export const fetchCountryById = async (id) => {
+	if (countryDetails[id]) return countryDetails[id];
+
+	try {
+		const url = `https://restcountries.eu/rest/v2/alpha/${id}`;
+		const res = await fetch(url);
+		const data = await res.json();
+		countryDetails[id] = data;
+		return data;
+	} catch (err) {
+		console.error(err);
+		return null;
+	}
+};
 ```
 
 ## :cool: Features
@@ -66,13 +100,12 @@
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working
-* To-Do: Add navigation from country detail page back to home. Add SSR etc.
+* Status: Part Working. COntact page observable not being subscribed to.
+* To-Do: Fix contact page Github API observable issue. Add navigation from country detail page back to home, population number - add commas REGEX?
 
 ## :clap: Inspiration
 
-* [
-James Q Quick: SvelteKit Crash Course - SSR, API Routes, Stores, Tailwind CSS, and More!](https://www.youtube.com/watch?v=UU7MgYIbtAk&t=63s)
+* [James Q Quick: SvelteKit Crash Course - SSR, API Routes, Stores, Tailwind CSS, and More!](https://www.youtube.com/watch?v=UU7MgYIbtAk&t=63s)
 
 ## :file_folder: License
 
