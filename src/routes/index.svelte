@@ -22,13 +22,13 @@
 </svelte:head>
 
 <input
-	class="w-full rounded-md text-lg p-2 border-2 border-gray-200"
+	class="m-4 w-3/5 rounded-md text-lg p-2 border-2 border-gray-200"
 	type="text"
   bind:value={searchTerm}
 	placeholder="Search countries"
 />
 
-<div class="py-4 grid gap-4 md:grid-cols-4 sm:grid-cols-2 xs:grid-cols-1">
+<div class="px-4 grid gap-4 md:grid-cols-4 sm:grid-cols-2 xs:grid-cols-1">
 	{#each filteredCountries as country}
 		<CountryCard {country} />
 	{/each}
