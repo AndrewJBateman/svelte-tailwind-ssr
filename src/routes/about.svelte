@@ -26,42 +26,17 @@
               <span class="font-bold text-gray-900"
                 >A list of countries is fetched from the REST Countries API</span
               >
-              using a simple http fetch and javascript map method. The country Alpha3 Code is used as the id so user can navigate to a Country Detail page.
+              The country Alpha3 Code is used as a country id for navigation to a Country Detail page using route params id to fetch full country details from the API.
             </p>
             <p>
               <span class="font-bold text-gray-900"
                 >The data on the Contact page</span
               >
               is fetched from the Github API. No API key is required to search
-              for a user.
+              for a user up to a set search limit.
             </p>
+            <p>The Stack: Svelte, Tailwindcss</p>
           </div>
-          <table class="my-2 text-xs">
-            <tbody>
-              <tr>
-                <td class="px-2 font-semibold text-gray-500">
-                  <span class="font-bold text-gray-900">The Stack:</span>
-                </td>
-                <td class="px-2 text-xs text-gray-600">
-                  Svelte, Tailwindcss
-                </td>
-              </tr>
-              <tr>
-                <td class="px-2">
-                  <span class="font-bold text-gray-900">Testing:</span>
-                </td>
-                <td class="px-2 text-xs text-gray-600">tba</td>
-              </tr>
-              <tr>
-                <td class="px-2">
-                  <span class="font-bold text-gray-900">Image Credit:</span>
-                </td>
-                <td class="px-2">
-                  <td class="px-2 text-xs text-gray-600">tba
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
           <div class="my-2 text-center">
             <a
