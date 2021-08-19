@@ -1,6 +1,6 @@
 # :zap: Svelte Tailwind SSR
 
-* Sveltejs kit used to display country API data
+* Sveltejs kit used with Tailwind CSS to display country API data
 * Code from [James Q Quick](https://www.youtube.com/channel/UC-T8W79DN6PBnzomelvqJYw) - see [:clap: Inspiration](#clap-inspiration) below - but using a different API, styling, navigation and grid layout. I recommend his tutorials - they are well explained.
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
@@ -28,7 +28,9 @@
 * Displays grid of Tailwind-styled cards, one for each country
 * Tailwind card data shown using separate card components
 * Search bar shows all countries that match the user search text
-* Country detail page uses the country alpha3 code in lower case as the unique id passed by route params
+* Country detail page uses the country alpha3 code in lower case as the unique id passed by route params.
+* About page gives details of the app and Github link
+* Contact page gives info. on the author via the Github API
 * API endpoint: `http://localhost:3000/api/countries/` shows all countries
 * API endpoint: `http://localhost:3000/api/countries/id` shows country with matching id
 * Unused Tailwind CSS is purged during build which makes for a much lighter bundle
@@ -37,11 +39,12 @@
 ## :camera: Screenshots
 
 ![Frontend screenshot](./imgs/search.png)
+![Frontend screenshot](./imgs/country.png)
 ![Frontend screenshot](./imgs/api.png)
 
 ## :signal_strength: Technologies
 
-* [Sveltejs/kit v3](https://svelte.dev/) fast front-end UI library with small bundles of highly-optimized vanilla JavaScript & declarative transitions. Does not use a virtual DOM.
+* [Sveltejs/kit v3](https://kit.svelte.dev/) fast front-end UI library with small bundles of highly-optimized vanilla JavaScript & declarative transitions. Does not use a virtual DOM.
 * [Tailwind v2](https://tailwindcss.com/) CSS framework
 * [Tailwind Colour Pallete](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
 * [Online color converter, hex to Tailwind](https://tailwind-color-finder.vercel.app/)
@@ -100,12 +103,13 @@ export const fetchCountryById = async (id) => {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Part Working. COntact page observable not being subscribed to.
-* To-Do: Fix contact page Github API observable issue. Add navigation from country detail page back to home, population number - add commas REGEX?
+* Status: Part Working. Contact page Github API observable not being subscribed to.
+* To-Do: Fix contact page Github API observable issue. population number - add commas REGEX?
 
 ## :clap: Inspiration
 
 * [James Q Quick: SvelteKit Crash Course - SSR, API Routes, Stores, Tailwind CSS, and More!](https://www.youtube.com/watch?v=UU7MgYIbtAk&t=63s)
+* [Support trailing $ name convention for stores (Observables)](https://www.gitmemory.com/issue/sveltejs/svelte/6373/851059020)
 
 ## :file_folder: License
 
