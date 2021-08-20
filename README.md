@@ -1,7 +1,6 @@
 # :zap: Svelte Tailwind SSR
 
-* Sveltejs kit used with Tailwind CSS to display country API data
-* Code from [James Q Quick](https://www.youtube.com/channel/UC-T8W79DN6PBnzomelvqJYw) - see [:clap: Inspiration](#clap-inspiration) below - but using a different API, styling, navigation and grid layout. I recommend his tutorials - they are well explained.
+* Sveltejs kit used with rxjs & Tailwind CSS to display country & Github API data
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/svelte-tailwind-ssr?style=plastic)
@@ -40,12 +39,15 @@
 
 ![Frontend screenshot](./imgs/search.png)
 ![Frontend screenshot](./imgs/country.png)
+![Frontend screenshot](./imgs/contact.png)
+![Frontend screenshot](./imgs/about.png)
 ![Frontend screenshot](./imgs/api.png)
 
 ## :signal_strength: Technologies
 
 * [Sveltejs/kit v3](https://kit.svelte.dev/) fast front-end UI library with small bundles of highly-optimized vanilla JavaScript & declarative transitions. Does not use a virtual DOM.
-* [Tailwind v2](https://tailwindcss.com/) CSS framework
+* [RxJS v7](https://rxjs.dev/) Reactive Extensions Library for JavaScript
+* [Tailwind CSS v2](https://tailwindcss.com/) CSS framework
 * [Tailwind Colour Pallete](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
 * [Online color converter, hex to Tailwind](https://tailwind-color-finder.vercel.app/)
 * [REST Countries API v2](https://restcountries.eu/) RESTful API with data on all world countries
@@ -63,10 +65,24 @@
 
 ## :computer: Code Examples
 
-* `stores/datastore.js` functions to fetch JSON data from a REST API
+* `stores/datastore.js` functions to fetch JSON data from Github & Restcountries APIs
 
 ```javascript
-// Fetch JSON data - 3 fields only - for all countries from a REST API
+// Fetch user data from Github REST API
+const baseUrl = 'https://api.github.com/users/';
+const userSearchUrl = `${baseUrl + 'AndrewJBateman'}`;
+const token = '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';
+export const user = ajax({
+	url: userSearchUrl,
+	headers: {
+		authorization: `token ${token}`
+	}
+}).pipe(
+	map((x) => x.response),
+	startWith([])
+);
+
+// Fetch JSON data - 3 fields only - for all countries from Restcountries API
 export const fetchCountries = async () => {
 	const url = 'https://restcountries.eu/rest/v2/all?fields=name;flag;alpha3Code';
 	const res = await fetch(url);
@@ -79,7 +95,7 @@ export const fetchCountries = async () => {
 	countries.set(loadedData);
 };
 
-// Fetch JSON data on country with alpha3 code matching id from a REST API
+// Fetch JSON data on country with alpha3 code matching id from Restcountries API
 export const fetchCountryById = async (id) => {
 	if (countryDetails[id]) return countryDetails[id];
 
@@ -103,17 +119,19 @@ export const fetchCountryById = async (id) => {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Part Working. Contact page Github API observable not being subscribed to.
-* To-Do: Fix contact page Github API observable issue. population number - add commas REGEX?
+* Status: Working
+* To-Do: Publish. Check Lighthouse score. Optimise for SSR. Add PWA? Add more API pages with nav-bar links. Add leaflet maps?
 
 ## :clap: Inspiration
 
 * [James Q Quick: SvelteKit Crash Course - SSR, API Routes, Stores, Tailwind CSS, and More!](https://www.youtube.com/watch?v=UU7MgYIbtAk&t=63s)
 * [Support trailing $ name convention for stores (Observables)](https://www.gitmemory.com/issue/sveltejs/svelte/6373/851059020)
+* [Learn RXJS ajax example](https://www.learnrxjs.io/learn-rxjs/operators/creation/ajax)
+* [MDN: Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
 
 ## :file_folder: License
 
-* N/A
+* This project is licensed under the terms of the MIT license.
 
 ## :envelope: Contact
 
