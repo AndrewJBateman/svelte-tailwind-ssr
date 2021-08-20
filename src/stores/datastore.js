@@ -9,7 +9,7 @@ const countryDetails = {};
 // Fetch user data from Github REST API
 const baseUrl = 'https://api.github.com/users/';
 const userSearchUrl = `${baseUrl + 'AndrewJBateman'}`;
-const token = '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';
+const token = 'YOUR TOKEN HERE';
 export const user = ajax({
 	url: userSearchUrl,
 	headers: {

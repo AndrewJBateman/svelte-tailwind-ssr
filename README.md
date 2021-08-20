@@ -1,6 +1,6 @@
 # :zap: Svelte Tailwind SSR
 
-* Sveltejs kit used with rxjs & Tailwind CSS to display country & Github API data
+* Sveltejs kit used with RxJS & Tailwind CSS to display country & Github API data
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/svelte-tailwind-ssr?style=plastic)
@@ -25,10 +25,10 @@
 ## :books: General info
 
 * Displays grid of Tailwind-styled cards, one for each country
-* Tailwind card data shown using separate card components
+* Tailwind CSS card markup shown using separate card components
 * Search bar shows all countries that match the user search text
 * Country detail page uses the country alpha3 code in lower case as the unique id passed by route params.
-* About page gives details of the app and Github link
+* About page gives details of the app with a Github link
 * Contact page gives info. on the author via the Github API
 * API endpoint: `http://localhost:3000/api/countries/` shows all countries
 * API endpoint: `http://localhost:3000/api/countries/id` shows country with matching id
@@ -48,7 +48,7 @@
 * [Sveltejs/kit v3](https://kit.svelte.dev/) fast front-end UI library with small bundles of highly-optimized vanilla JavaScript & declarative transitions. Does not use a virtual DOM.
 * [RxJS v7](https://rxjs.dev/) Reactive Extensions Library for JavaScript
 * [Tailwind CSS v2](https://tailwindcss.com/) CSS framework
-* [Tailwind Colour Pallete](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
+* [Tailwind Colour Palette](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
 * [Online color converter, hex to Tailwind](https://tailwind-color-finder.vercel.app/)
 * [REST Countries API v2](https://restcountries.eu/) RESTful API with data on all world countries
 
@@ -57,7 +57,7 @@
 * `npm i` to install dependencies
 * `npm run dev` to run dev server on port `localhost:3000`
 * `npm run build` to build optimised version
-* `npm run start` to run the newly built app
+* `npm run preview` to run the newly built app
 
 ## :wrench: Testing
 
@@ -71,7 +71,7 @@
 // Fetch user data from Github REST API
 const baseUrl = 'https://api.github.com/users/';
 const userSearchUrl = `${baseUrl + 'AndrewJBateman'}`;
-const token = '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';
+const token = 'YOUR TOKEN HERE';
 export const user = ajax({
 	url: userSearchUrl,
 	headers: {
