@@ -16,6 +16,7 @@
     "eslint-plugin-svelte3": "^3.2.0",
     "prettier": "~2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
+    "rxjs": "^7.3.0",
     "svelte": "^3.34.0",
     "tailwindcss": "^2.2.7"
   },
