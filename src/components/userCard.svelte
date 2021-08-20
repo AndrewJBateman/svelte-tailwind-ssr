@@ -19,7 +19,7 @@
 						/>
 					</div>
 					<div class="p-2">
-						<h3 class="pb-1 text-xl font-medium leading-8 text-center text-gray-900">
+						<h3 class="pb-1 text-xl font-bold leading-8 text-center text-blue-900">
 							<span class="text-xs italic text-gray-600">App by</span>
 							<pre>{$user.name}</pre>
 						</h3>

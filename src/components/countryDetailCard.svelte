@@ -71,7 +71,7 @@
 	<div class="text-center">
 		<a href="/">
 			<button
-				class="p-1 text-white bg-blue-900 rounded-lg w-full/2 focus:outline-none"
+				class="py-1 px-2 text-white bg-blue-900 rounded-lg w-full/2 focus:outline-none"
 				transition:fade
 			>
 				Back to List

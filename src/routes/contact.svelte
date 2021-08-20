@@ -8,7 +8,5 @@
 </svelte:head>
 
 <main>
-	<div>
-		<UserCard {user} {derivedDate} />
-	</div>
+	<UserCard {user} {derivedDate} />
 </main>
