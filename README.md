@@ -10,17 +10,19 @@
 
 ## :page_facing_up: Table of contents
 
-* [:zap: Svelte Rollup Crypto](#zap-svelte-rollup-crypto)
-  * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
-  * [:books: General Info](#books-general-info)
-  * [:camera: Screenshots](#camera-screenshots)
-  * [:signal_strength: Technologies](#signal_strength-technologies)
-  * [:floppy_disk: Setup](#floppy_disk-setup)
-  * [:computer: Code Examples](#computer-code-examples)
-  * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
-  * [:clap: Inspiration](#clap-inspiration)
-  * [:file_folder: License](#file_folder-license)
-  * [:envelope: Contact](#envelope-contact)
+* [:zap: Svelte Tailwind SSR](#zap-svelte-tailwind-ssr)
+	* [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
+	* [:books: General info](#books-general-info)
+	* [:camera: Screenshots](#camera-screenshots)
+	* [:signal_strength: Technologies](#signal_strength-technologies)
+	* [:floppy_disk: Setup](#floppy_disk-setup)
+	* [:wrench: Testing](#wrench-testing)
+	* [:computer: Code Examples](#computer-code-examples)
+	* [:cool: Features](#cool-features)
+	* [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
+	* [:clap: Inspiration](#clap-inspiration)
+	* [:file_folder: License](#file_folder-license)
+	* [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
 
@@ -47,7 +49,7 @@
 
 * [Sveltejs/kit v3](https://kit.svelte.dev/) fast front-end UI library with small bundles of highly-optimized vanilla JavaScript & declarative transitions. Does not use a virtual DOM.
 * [RxJS v7](https://rxjs.dev/) Reactive Extensions Library for JavaScript
-* [Tailwind CSS v2](https://tailwindcss.com/) CSS framework
+* [Tailwind CSS v3](https://tailwindcss.com/) CSS framework
 * [Tailwind Colour Palette](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
 * [Online color converter, hex to Tailwind](https://tailwind-color-finder.vercel.app/)
 * [REST Countries API v2](https://restcountries.eu/) RESTful API with data on all world countries
@@ -71,12 +73,8 @@
 // Fetch user data from Github REST API
 const baseUrl = 'https://api.github.com/users/';
 const userSearchUrl = `${baseUrl + 'AndrewJBateman'}`;
-const token = 'YOUR TOKEN HERE';
 export const user = ajax({
-	url: userSearchUrl,
-	headers: {
-		authorization: `token ${token}`
-	}
+	url: userSearchUrl
 }).pipe(
 	map((x) => x.response),
 	startWith([])
@@ -84,7 +82,7 @@ export const user = ajax({
 
 // Fetch JSON data - 3 fields only - for all countries from Restcountries API
 export const fetchCountries = async () => {
-	const url = 'https://restcountries.eu/rest/v2/all?fields=name;flag;alpha3Code';
+	const url = 'https://restcountries.com/v2/all?fields=name,flag,alpha3Code';
 	const res = await fetch(url);
 	const data = await res.json();
 	const loadedData = data.map((data) => ({
@@ -100,7 +98,7 @@ export const fetchCountryById = async (id) => {
 	if (countryDetails[id]) return countryDetails[id];
 
 	try {
-		const url = `https://restcountries.eu/rest/v2/alpha/${id}`;
+		const url = `https://restcountries.com/v2/alpha/${id}`;
 		const res = await fetch(url);
 		const data = await res.json();
 		countryDetails[id] = data;
@@ -115,6 +113,7 @@ export const fetchCountryById = async (id) => {
 ## :cool: Features
 
 * Search input filtering
+* No API keys required
 * Tailwind results in a very compact bundle and helps with Lighthouse audit
 
 ## :clipboard: Status & To-Do List
