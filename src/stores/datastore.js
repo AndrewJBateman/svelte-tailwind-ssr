@@ -9,12 +9,8 @@ const countryDetails = {};
 // Fetch user data from Github REST API
 const baseUrl = 'https://api.github.com/users/';
 const userSearchUrl = `${baseUrl + 'AndrewJBateman'}`;
-const token = 'YOUR TOKEN HERE';
 export const user = ajax({
-	url: userSearchUrl,
-	headers: {
-		authorization: `token ${token}`
-	}
+	url: userSearchUrl
 }).pipe(
 	map((x) => x.response),
 	startWith([])
