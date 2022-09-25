@@ -1,9 +1,9 @@
 <script context="module">
-	import { fetchCountryById } from '../../stores/datastore';
+	import { fetchCountryById } from '../../store/datastore';
 	import CountryDetailCard from '../../components/countryDetailCard.svelte';
 
 	export async function load(ctx) {
-		let id = ctx.page.params.id;
+		let id = ctx.params.id;
 		const country = await fetchCountryById(id);
 		return { props: { country } };
 	}

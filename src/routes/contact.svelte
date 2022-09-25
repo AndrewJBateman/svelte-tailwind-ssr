@@ -1,5 +1,5 @@
 <script context="module">
-	import { user, derivedDate } from './../stores/datastore';
+	import { user, derivedDate } from './../store/datastore';
 	import UserCard from './../components/userCard.svelte';
 </script>
 

@@ -35,7 +35,9 @@
 								search limit.
 							</p>
 							<br />
-							<p><span class="font-bold text-blue-900">The Stack:</span> Svelte, RxJS, Tailwind CSS.</p>
+							<p>
+								<span class="font-bold text-blue-900">The Stack:</span> Svelte, RxJS, Tailwind CSS.
+							</p>
 						</div>
 
 						<div class="my-2 text-center">

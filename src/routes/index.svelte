@@ -1,5 +1,5 @@
 <script>
-	import { countries, fetchCountries } from '../stores/datastore';
+	import { countries, fetchCountries } from '../store/datastore';
 	import CountryCard from '../components/countryCard.svelte';
 
 	let searchTerm = '';
