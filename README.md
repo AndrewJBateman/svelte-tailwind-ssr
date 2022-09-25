@@ -1,6 +1,6 @@
 # :zap: Svelte Tailwind SSR
 
-* Sveltejs kit used with RxJS & Tailwind CSS to display country & Github API data
+* Sveltejs kit used with Vite and RxJS & Tailwind CSS to display country & Github API data
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/svelte-tailwind-ssr?style=plastic)
@@ -67,9 +67,9 @@
 
 ## :computer: Code Examples
 
-* `stores/datastore.js` functions to fetch JSON data from Github & Restcountries APIs
+* `store/datastore.ts` functions to fetch JSON data from Github & Restcountries APIs
 
-```javascript
+```typescript
 // Fetch user data from Github REST API
 const baseUrl = 'https://api.github.com/users/';
 const userSearchUrl = `${baseUrl + 'AndrewJBateman'}`;
@@ -119,7 +119,7 @@ export const fetchCountryById = async (id) => {
 ## :clipboard: Status & To-Do List
 
 * Status: Working
-* To-Do: Publish. Check Lighthouse score. Optimise for SSR. Add PWA? Add more API pages with nav-bar links. Add leaflet maps?
+* To-Do: Change to API v3. Publish. Check Lighthouse score. Optimise for SSR. Add PWA? Add more API pages with nav-bar links. Add leaflet maps?
 
 ## :clap: Inspiration
 
