@@ -5,7 +5,7 @@
 
 <a
 	class="list-none p-6 bg-gray-100 text-gray-800 text-center rounded-md shadow-md flex flex-col items-center"
-	href={`/countries/${country.id}`}
+	href={`/country/${country.id}`}
 	transition:fade
 >
 	<img class="h-20 w-30" src={country.image} alt={country.name} />

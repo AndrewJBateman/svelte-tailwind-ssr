@@ -1,6 +1,6 @@
 <script context="module">
-	import { user, derivedDate } from './../store/datastore';
-	import UserCard from './../components/userCard.svelte';
+	import { user, derivedDate } from '../../store/datastore';
+	import UserCard from '../../components/userCard.svelte';
 </script>
 
 <svelte:head>
