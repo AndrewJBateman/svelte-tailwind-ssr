@@ -1,20 +1,20 @@
-<script>
-	import { countries, fetchCountries } from '../store/datastore';
-	import CountryCard from '../components/countryCard.svelte';
+<script lang="ts">
+	import CountryCard from '$components/countryCard.svelte';
+	import { filterByName } from '$components/Filters.svelte';
+
+	export let data: any;
 
 	let searchTerm = '';
-	let filteredCountries = [];
+	let filteredCountries = data.countries;
 
+	$: lowerName = searchTerm?.toLowerCase();
 	$: {
-		if (searchTerm) {
-			filteredCountries = $countries.filter((country) =>
-				country.name.toLowerCase().includes(searchTerm.toLowerCase())
-			);
+		if (lowerName) {
+			filteredCountries = filterByName(data.countries, lowerName);
 		} else {
-			filteredCountries = [...$countries];
+			filteredCountries = data.countries;
 		}
 	}
-	fetchCountries();
 </script>
 
 <svelte:head>
@@ -24,12 +24,12 @@
 <input
 	class="m-4 w-3/5 rounded-md text-lg p-2 border-2 border-gray-200"
 	type="text"
-  bind:value={searchTerm}
+	bind:value={searchTerm}
 	placeholder="Search countries"
 />
 
 <div class="px-4 grid gap-4 md:grid-cols-4 sm:grid-cols-2 xs:grid-cols-1">
-	{#each filteredCountries as country}
+	{#each filteredCountries as country, index (index)}
 		<CountryCard {country} />
 	{/each}
 </div>
