@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
 	import { fade } from 'svelte/transition';
-	export let country;
+	export let country: any;
 </script>
 
 <div
@@ -23,32 +23,32 @@
 				</td>
 				<td class="px-2 text-xs text-gray-600"> {country.subregion}, {country.region}</td>
 			</tr>
-			<!-- <tr>
+			<tr>
 				<td class="px-2">
 					<span class="font-bold text-blue-900">Main Language:</span>
 				</td>
 				<td class="px-2 text-xs text-gray-600"> {country.languages[0].name}</td>
-			</tr> -->
-			<!-- <tr>
+			</tr>
+			<tr>
 				<td class="px-2">
 					<span class="font-bold text-blue-900">Main Currency:</span>
 				</td>
 				<td class="px-2 text-xs text-gray-600">
 					{country.currencies[0].name} ({country.currencies[0].symbol})</td
 				>
-			</tr> -->
+			</tr>
 			<tr>
 				<td class="px-2">
 					<span class="font-bold text-blue-900">Population:</span>
 				</td>
 				<td class="px-2 text-xs text-gray-600"> {country.population} </td>
 			</tr>
-			<!-- <tr>
+			<tr>
 				<td class="px-2">
 					<span class="font-bold text-blue-900">Main Time Zone:</span>
 				</td>
 				<td class="px-2 text-xs text-gray-600"> {country.timezones[0]} </td>
-			</tr> -->
+			</tr>
 		</tbody>
 	</table>
 

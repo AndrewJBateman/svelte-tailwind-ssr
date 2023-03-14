@@ -1,6 +1,11 @@
-<script context="module">
-	import { user, derivedDate } from '../../store/datastore';
-	import UserCard from '../../components/userCard.svelte';
+<script lang="ts">
+	import UserCard from '$lib/components/userCard.svelte';
+	import type { User } from '$lib/models/user';
+
+	export let data: User;
+	let user = data;
+	let derivedDate = "2023";
+
 </script>
 
 <svelte:head>
@@ -8,5 +13,5 @@
 </svelte:head>
 
 <main>
-	<UserCard {user} {derivedDate} />
+	<UserCard {user} {derivedDate}/>
 </main>

@@ -14,7 +14,6 @@ const config = {
 		// adapter: adapter({ out: 'build' }),
 		alias: {
 			$lib: './src/lib/',
-			$components: './src/components/'
 		}
 	}
 };
