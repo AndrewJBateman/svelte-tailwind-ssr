@@ -7,7 +7,6 @@ export const load: PageServerLoad = async ({setHeaders}) => {
     const countries = await fetchCountries();
     setHeaders({ 'cache-control': 'max-age=360' });
 		return { countries };
-
 	} catch (err) {
 		throw error(404, {
 			message: 'Country details not found'

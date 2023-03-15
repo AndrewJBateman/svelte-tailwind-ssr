@@ -1,6 +1,6 @@
 <script lang="ts">
 	import CountryCard from '$lib/components/countryCard.svelte';
-	import { filterByName } from '$lib/filters.svelte';
+	import { filterByName } from '$lib/utils/filters.svelte';
 
 	export let data: any;
 
