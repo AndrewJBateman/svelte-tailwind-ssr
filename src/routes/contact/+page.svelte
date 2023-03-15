@@ -1,11 +1,10 @@
 <script lang="ts">
 	import UserCard from '$lib/components/userCard.svelte';
 	import type { User } from '$lib/models/user';
+	import type { PageData } from '../$types';
 
-	export let data: User;
+	export let data: any;
 	let user = data;
-	let derivedDate = "2023";
-
 </script>
 
 <svelte:head>
@@ -13,5 +12,5 @@
 </svelte:head>
 
 <main>
-	<UserCard {user} {derivedDate}/>
+	<UserCard {user} />
 </main>
