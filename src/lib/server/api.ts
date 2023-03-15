@@ -14,7 +14,7 @@ export const fetchUserData = async () => {
 	try {
 		const apiData = await fetch(`${GITHUB_BASE_PATH}/${username}`)
 			.then(response => response.json());
-		userData.set(apiData);	
+			userData.set(apiData);
 	} catch (error) {
 		throw new Error('Unable to fetch user data');
 	}
