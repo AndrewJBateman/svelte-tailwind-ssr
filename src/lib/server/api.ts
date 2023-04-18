@@ -7,7 +7,6 @@ const GITHUB_BASE_PATH = 'https://api.github.com/users';
 const username = 'AndrewJBateman';
 export const countries = writable([]);
 export const userData = writable([]);
-export const derivedDate = new Date().toLocaleDateString('en-GB');
 
 // Fetch user Github data
 export const fetchUserData = async () => {
