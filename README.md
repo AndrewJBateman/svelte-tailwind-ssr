@@ -1,6 +1,7 @@
 # :zap: Svelte Tailwind SSR
 
 * Sveltejs kit used with Vite and RxJS & Tailwind CSS to display country & Github API data
+* Latest vite/Svelte3 folder layout using `+page.server.ts` to fetch server-side data to pass to `+page.svelte` client page.
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/svelte-tailwind-ssr?style=plastic)
@@ -11,17 +12,17 @@
 ## :page_facing_up: Table of contents
 
 * [:zap: Svelte Tailwind SSR](#zap-svelte-tailwind-ssr)
-	* [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
+	* [:page\_facing\_up: Table of contents](#page_facing_up-table-of-contents)
 	* [:books: General info](#books-general-info)
 	* [:camera: Screenshots](#camera-screenshots)
-	* [:signal_strength: Technologies](#signal_strength-technologies)
-	* [:floppy_disk: Setup](#floppy_disk-setup)
+	* [:signal\_strength: Technologies](#signal_strength-technologies)
+	* [:floppy\_disk: Setup](#floppy_disk-setup)
 	* [:wrench: Testing](#wrench-testing)
 	* [:computer: Code Examples](#computer-code-examples)
 	* [:cool: Features](#cool-features)
-	* [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
+	* [:clipboard: Status \& To-Do List](#clipboard-status--to-do-list)
 	* [:clap: Inspiration](#clap-inspiration)
-	* [:file_folder: License](#file_folder-license)
+	* [:file\_folder: License](#file_folder-license)
 	* [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
@@ -47,7 +48,9 @@
 
 ## :signal_strength: Technologies
 
-* [Sveltejs/kit v3](https://kit.svelte.dev/) fast front-end UI library with small bundles of highly-optimized vanilla JavaScript & declarative transitions. Does not use a virtual DOM.
+* [Sveltejs/kit v1](https://kit.svelte.dev/) Svelte & Vite-based framework
+* [Svelte v3](https://svelte.dev/) React-based & created by Facebook (Meta), it is a fast, light and efficient front-end UI library/compiler that converts code to small bundles of highly-optimized ES6 vanilla JavaScript & declarative transitions. Does not use a virtual DOM. I have had to completely restructure the app due to Svelte/vite breaking version changes. A lot of companies use Svelte
+* [Vite v4](https://www.npmjs.com/package/vite) Frontend Tooling dev server and build command for optimised build static assets.
 * [RxJS v7](https://rxjs.dev/) Reactive Extensions Library for JavaScript
 * [Tailwind CSS v3](https://tailwindcss.com/) CSS framework
 * [Tailwind Colour Palette](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
@@ -127,6 +130,7 @@ export const fetchCountryById = async (id) => {
 * [Support trailing $ name convention for stores (Observables)](https://www.gitmemory.com/issue/sveltejs/svelte/6373/851059020)
 * [Learn RXJS ajax example](https://www.learnrxjs.io/learn-rxjs/operators/creation/ajax)
 * [MDN: Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
+* [netlify: Migrating Breaking Changes in SvelteKit](https://www.netlify.com/blog/migrating-breaking-changes-in-sveltekit/)
 
 ## :file_folder: License
 
